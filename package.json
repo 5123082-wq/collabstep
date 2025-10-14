@@ -1,0 +1,17 @@
+{
+  "name": "collabverse-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.15.5",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:migrate": "pnpm --filter @collabverse/db prisma migrate deploy",
+    "db:seed": "pnpm --filter @collabverse/db prisma db seed"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.12"
+  }
+}
