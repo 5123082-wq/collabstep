@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = {
   darkMode: ["class", "[data-theme='dark']"],
   theme: {
     extend: {
@@ -44,6 +44,6 @@ const config: Config = {
       }
     }
   }
-};
+} satisfies Partial<Config>;
 
 export default config;
