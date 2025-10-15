@@ -1,4 +1,5 @@
 import Fuse from 'fuse.js';
+import type { IFuseOptions } from 'fuse.js';
 
 export type SearchKind = 'projects' | 'tasks' | 'invoices' | 'all';
 
@@ -38,7 +39,7 @@ export interface SearchResult {
   href: string;
 }
 
-const baseOptions: Fuse.IFuseOptions<SearchResult> = {
+const baseOptions: IFuseOptions<SearchResult> = {
   includeScore: true,
   shouldSort: true,
   threshold: 0.38,
