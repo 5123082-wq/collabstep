@@ -2,16 +2,40 @@
   "name": "collabverse-monorepo",
   "private": true,
   "version": "0.1.0",
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617",
+  "engines": {
+    "node": ">=20 <21",
+    "pnpm": ">=9"
+  },
   "scripts": {
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
+    "dev": "pnpm --filter @collabverse/web dev",
+    "build": "pnpm --filter @collabverse/web build",
+    "start": "pnpm --filter @collabverse/web start",
+    "lint": "eslint .",
+    "test": "jest -u",
+    "test:e2e": "playwright test",
+    "dev:turbo": "turbo run dev --parallel",
+    "build:turbo": "turbo run build",
+    "lint:turbo": "turbo run lint",
+    "test:turbo": "turbo run test",
     "db:migrate": "pnpm --filter @collabverse/db prisma migrate deploy",
     "db:seed": "pnpm --filter @collabverse/db prisma db seed"
   },
   "devDependencies": {
-    "turbo": "^1.10.12"
+    "@playwright/test": "^1.45.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.7.0",
+    "playwright": "^1.45.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.2.2",
+    "turbo": "^1.10.12",
+    "typescript": "^5.4.5"
   }
 }

@@ -1,37 +1,50 @@
-# Collabverse Monorepo (MVP Skeleton)
+# Collabverse Monorepo
 
-This repository currently hosts the foundational monorepo structure for the future Collabverse platform. It includes the workspace configuration files that allow us to start implementing the frontend (Next.js), backend (NestJS) and shared packages. Further work will add the actual applications, database schema, and infrastructure described in the project brief.
+Репозиторий содержит рабочий каркас для веб-приложения Collabverse на Next.js и связанные пакеты. Этап 0 фиксирует базовую конфигурацию окружения, единые инструменты и заготовки под будущие фичи.
 
-## Structure
+## Требования к окружению
 
-```
-apps/
-  web/         # Next.js app (to be implemented)
-  api/         # NestJS app (to be implemented)
-packages/
-  ui/          # Shared UI kit (to be implemented)
-  db/          # Prisma schema & tooling (to be implemented)
-  types/       # Shared TypeScript types (to be implemented)
-  config/      # Shared config packages (to be implemented)
-infra/
-  docker/      # Docker & deployment assets (to be implemented)
-```
+- Node.js >= 20 < 21 (см. [`.nvmrc`](./.nvmrc)).
+- pnpm >= 9 (в проекте используется 8.15.5).
+- Для e2e-тестов необходимы браузеры Playwright: `pnpm exec playwright install`.
 
-## Getting Started
-
-Install dependencies using pnpm (recommended version pinned in `package.json`):
+## Установка зависимостей
 
 ```bash
 pnpm install
 ```
 
-Available root scripts:
+## Базовые команды
 
-- `pnpm dev` – runs the dev servers for all apps via Turborepo.
-- `pnpm build` – builds all apps/packages.
-- `pnpm lint` – executes linting across the monorepo.
-- `pnpm test` – runs unit/integration tests across the monorepo.
-- `pnpm db:migrate` – placeholder command for database migrations.
-- `pnpm db:seed` – placeholder command for database seeders.
+| Команда | Назначение |
+| --- | --- |
+| `pnpm dev` | Запустить Next.js приложение (`@collabverse/web`) в dev-режиме. |
+| `pnpm build` | Собрать Next.js приложение. |
+| `pnpm start` | Запустить production-сервер Next.js после сборки. |
+| `pnpm lint` | Прогнать ESLint по репозиторию. |
+| `pnpm test` | Запустить Jest (`ts-jest`) со snapshot-режимом. |
+| `pnpm test:e2e` | Запустить smoke-набор Playwright (Chromium, headless). |
+| `pnpm dev:turbo` | Прежняя команда Turborepo для параллельного dev-режима. |
+| `pnpm build:turbo` | Прежняя Turborepo сборка всех пакетов. |
 
-More detailed instructions will be added once the individual apps and packages are scaffolded.
+Команды для базы данных (`pnpm db:migrate`, `pnpm db:seed`) оставлены как заглушки из исходного скелета.
+
+## Переменные окружения
+
+Скопируйте `.env.example` в `.env` и при необходимости измените значения.
+
+- `NAV_V1`: включает новую навигацию (значение `on` активирует флаг). По умолчанию `off`.
+- `APP_LOCALE`: локаль приложения, по умолчанию `ru`.
+
+Навигация v1 будет подключена на Этапе 1. На Этапе 0 флаг и заглушки добавлены, но UI не изменён.
+
+## Тесты и CI
+
+- Юнит-тесты расположены в `tests/unit` и выполняются через Jest (`ts-jest`).
+- Smoke e2e-тесты размещены в `tests/e2e` и работают через Playwright с авто-подъёмом dev-сервера.
+- GitHub Actions workflow `.github/workflows/ci.yml` запускает `lint`, `build`, `test` и `test:e2e` на пуш в `main`.
+
+## Дополнительная документация
+
+- [`docs/baseline.md`](./docs/baseline.md) — зафиксированная информация об окружении и командах.
+- [`apps/web/docs/README_nav_ru.md`](./apps/web/docs/README_nav_ru.md) — план навигации и этапов внедрения.
