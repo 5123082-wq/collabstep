@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --card: rgba(255, 255, 255, 0.08);
+  --text: #0f172a;
+  --text-on-dark: #f8fafc;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --container: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(160deg, #0f172a, #312e81);
+  color: var(--text-on-dark);
+}
+
+.container {
+  width: min(92%, var(--container));
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  margin-bottom: 2rem;
+  color: rgba(248, 250, 252, 0.88);
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta:hover,
+.cta:focus {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.features {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 3rem;
+  border-radius: 1.75rem;
+  backdrop-filter: blur(14px);
+  margin-bottom: 4rem;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.65);
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-grid article {
+  background: var(--card);
+  padding: 1.75rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-grid article:hover {
+  transform: translateY(-6px);
+  border-color: rgba(129, 140, 248, 0.75);
+}
+
+.feature-grid h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-grid p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(248, 250, 252, 0.85);
+}
+
+.cta-section {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.cta-section h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+  color: rgba(248, 250, 252, 0.78);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: rgba(248, 250, 252, 0.6);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .features {
+    padding: 2.5rem 1.5rem;
+  }
+}
