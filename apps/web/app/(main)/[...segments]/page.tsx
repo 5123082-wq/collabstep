@@ -28,7 +28,7 @@ export default function SegmentsPage({ params }: { params: { segments?: string[]
   const path = useMemo(() => segments.join("/"), [segments]);
   const showProjectTabs = segments[0] === "projects" && segments[1] === "project";
   const activeTab = segments[2] ?? "overview";
-  const [_, forceUpdate] = useState(0);
+  const [, forceUpdate] = useState(0);
 
   useEffect(() => {
     if (!descriptor) {
