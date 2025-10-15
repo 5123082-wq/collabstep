@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background font-sans">
+      <body className="min-h-screen bg-background font-sans app-background-mesh">
         <AppProviders>{children}</AppProviders>
       </body>
     </html>

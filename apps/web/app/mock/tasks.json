@@ -1,0 +1,37 @@
+[
+  {
+    "id": "task-brief",
+    "title": "Собрать вводные по кампании",
+    "code": "#123",
+    "projectId": "prj-neo",
+    "assignee": "Мария Кузнецова"
+  },
+  {
+    "id": "task-design",
+    "title": "Подготовить концепты баннеров",
+    "code": "#207",
+    "projectId": "prj-brand",
+    "assignee": "Егор Фадеев"
+  },
+  {
+    "id": "task-app-flow",
+    "title": "Собрать пользовательские сценарии",
+    "code": "#312",
+    "projectId": "prj-app",
+    "assignee": "Антон Белый"
+  },
+  {
+    "id": "task-event",
+    "title": "Согласовать площадку",
+    "code": "#415",
+    "projectId": "prj-event",
+    "assignee": "Кира Смирнова"
+  },
+  {
+    "id": "task-content",
+    "title": "Сформировать контент-календарь",
+    "code": "#501",
+    "projectId": "prj-content",
+    "assignee": "Илья Титов"
+  }
+]
