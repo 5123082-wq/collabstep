@@ -3,6 +3,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["node", "jest"],
     "paths": {
       "@/*": ["apps/web/*"],
       "@packages/*": ["packages/*"]
