@@ -15,6 +15,9 @@ export default defineConfig({
   webServer: {
     command: 'pnpm --filter @collabverse/web dev --hostname 0.0.0.0 --port 3000',
     url: 'http://127.0.0.1:3000',
+    env: {
+      NAV_V1: 'on'
+    },
     reuseExistingServer: !process.env.CI,
     stdout: 'pipe',
     stderr: 'pipe',
